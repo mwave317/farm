@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+    margin: 0px; 
+    padding: 0px;
+}
+.navbar-wrapper {
+    display: flex;
+    justify-content: center;
+    vertical-align: center;
+    list-style: none;
+    font-size: 12px;
+    padding: 0px;
+    height: 30px;
+}
+
+li {
+    padding-right: 6px;
+    vertical-align: center;
+}
+
+li:focus {
+    outline: none;
+    background-color: rgb(179,175,172);
+}

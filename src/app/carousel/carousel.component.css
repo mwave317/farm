@@ -1,0 +1,89 @@
+html, body {
+    width: 100%;
+    height: 50%;
+    padding: 0px;
+    margin: 0px;
+}
+
+.carousel-wrapper {
+    position: relative;
+}
+
+.carousel-container {
+    height: 25vh;
+}
+.slider {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+    overflow: hidden;
+    position: absolute;
+     animation: slide 16s infinite ;
+    animation-iteration-count: infinite; 
+    -webkit-animation:slide 16s infinite;
+    -moz-animation:slide 16s infinite; 
+    /* animation-iteration-count: 1; */
+ 
+}
+
+p {
+    margin: 0px;
+    padding: 0px;
+}
+
+p:nth-child(1) {
+    left: 100%;
+    animation-delay: -1s;
+    background-image: url("../../assets/slideshow/cows_field_grass_eating_walking_grazing_40238_1280x720.jpg");
+    background-size: cover;
+    background-position: cover;
+    background-position: center;
+} 
+
+p:nth-child(2) {
+    left: 100%;
+    animation-delay: 3s;
+    background-image: url("../../assets/slideshow/five-chickens-standing-on-a-ledge-farm-background-wallpaper-pictures-1536x1024.jpg");
+    background-size: cover;
+    background-position: cover;
+    background-position: center;
+} 
+
+p:nth-child(3) {
+    left: 100%;
+    animation-delay: 7s;
+    background-image: url("../../assets/slideshow/pigs on straw.jpg");
+    background-size: cover;
+    background-position: cover;
+    background-position: center;
+} 
+
+p:nth-child(4) {
+    left: 100%;
+    animation-delay: 11s;
+    background-image: url("../../assets/slideshow/pigs on straw.jpg");
+    background-size: cover;
+    background-position: cover;
+    background-position: center;
+} 
+
+ p {
+    font-family: Confortaa;
+    font-size: 70px;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    color: #ffffff;
+}
+
+@keyframes slide {
+    0% { left: 100%; width: 100%;}
+    5% { left: 0%;}
+    25% { left: 0%; }
+    30% { left: -100%; width: 100%;}
+    30.0001% { left: -100%; width: 0%; }
+    100% { left: 100%; width: 0%;}
+
+}
+
