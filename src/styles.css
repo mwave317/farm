@@ -4,3 +4,9 @@
     margin: 0px;
     padding: 0px;
 }
+
+button {
+    padding: 10px;
+    background-color: rgb(163, 159, 159);
+    color: #ffffff;
+}

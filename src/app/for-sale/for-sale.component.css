@@ -1,0 +1,17 @@
+.for-sale-container {
+    text-align: center;
+    padding: 20px;
+}
+.button {
+    background-color: #ffffff;
+    color: #000000;
+    border: 0px;
+}
+
+p {
+    margin-bottom: 8px;
+}
+
+.items-for-sale {
+    margin-bottom: 20px;
+}

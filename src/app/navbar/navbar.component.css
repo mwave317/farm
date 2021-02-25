@@ -1,24 +1,30 @@
-* {
-    box-sizing: border-box;
-    margin: 0px; 
-    padding: 0px;
-}
 .navbar-wrapper {
     display: flex;
     justify-content: center;
-    vertical-align: center;
+    align-items: center;
     list-style: none;
     font-size: 12px;
     padding: 0px;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
+.navbar-container {
     height: 30px;
+    position: -webkit-sticky; /* Safari */
+
 }
 
 li {
-    padding-right: 6px;
-    vertical-align: center;
+    padding: 10px 5px;
 }
 
-li:focus {
+
+li:focus{
     outline: none;
+    background-color: rgb(179,175,172);
+}
+
+li:hover {
     background-color: rgb(179,175,172);
 }

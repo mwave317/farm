@@ -11,6 +11,9 @@ import { ContactComponent } from './contact/contact.component';
 import { OurMeatsComponent } from './our-meats/our-meats.component';
 import { PricingOrderingComponent } from './pricing-ordering/pricing-ordering.component';
 import { FarmToTableComponent } from './farm-to-table/farm-to-table.component';
+import { CustomerReviewsComponent } from './customer-reviews/customer-reviews.component';
+import { ForSaleComponent } from './for-sale/for-sale.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { FarmToTableComponent } from './farm-to-table/farm-to-table.component';
     ContactComponent,
     OurMeatsComponent,
     PricingOrderingComponent,
-    FarmToTableComponent
+    FarmToTableComponent,
+    CustomerReviewsComponent,
+    ForSaleComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
