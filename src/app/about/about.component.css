@@ -1,0 +1,36 @@
+.about-wrapper {
+    display: flex;
+    justify-content: center;
+
+}
+
+.about-container {
+    width: 90vw;
+}
+img {
+    height: 40vh;
+    width: 90vw;
+    padding-bottom: 20px;
+}
+
+.about-homestead {
+    padding-bottom: 20px;
+}
+
+.about-advantages {
+ 
+    /* background-color: rgb(120,91,37); */
+}
+
+p {
+    padding-bottom: 5px;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    
+}
+
+h2, h3 {
+    padding: 20px;
+}

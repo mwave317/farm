@@ -1,3 +1,11 @@
 div {
  background-color: rgb(248, 247,243);
 }
+
+h2 {
+    text-align: center;
+    margin-bottom: -1px;
+    background-color: rgb(120,91,37);
+    padding: 20px 0px 5px 0px;
+    color: #ffffff;
+}

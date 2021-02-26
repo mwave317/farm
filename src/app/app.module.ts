@@ -14,6 +14,7 @@ import { FarmToTableComponent } from './farm-to-table/farm-to-table.component';
 import { CustomerReviewsComponent } from './customer-reviews/customer-reviews.component';
 import { ForSaleComponent } from './for-sale/for-sale.component';
 import { CardComponent } from './card/card.component';
+import { TipsAndTerminologyComponent } from './tips-and-terminology/tips-and-terminology.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CardComponent } from './card/card.component';
     FarmToTableComponent,
     CustomerReviewsComponent,
     ForSaleComponent,
-    CardComponent
+    CardComponent,
+    TipsAndTerminologyComponent
   ],
   imports: [
     BrowserModule,

@@ -1,21 +1,20 @@
-.navbar-wrapper {
+.navbar-container {
+    height: 30px;
+    width: 100vw;
+    background-color: #ffffff;
+}
+
+.navbar-items {
     display: flex;
     justify-content: center;
     align-items: center;
     list-style: none;
     font-size: 12px;
     padding: 0px;
-
-}
-.navbar-container {
-    height: 30px;
-    width: 100vw;
-    background-color: #ffffff;
-
 }
 
 li {
-    padding: 10px 5px;
+    padding: 9px 5px;
 }
 
 
