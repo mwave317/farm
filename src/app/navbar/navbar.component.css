@@ -5,13 +5,12 @@
     list-style: none;
     font-size: 12px;
     padding: 0px;
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    top: 0;
+
 }
 .navbar-container {
     height: 30px;
-    position: -webkit-sticky; /* Safari */
+    width: 100vw;
+    background-color: #ffffff;
 
 }
 
