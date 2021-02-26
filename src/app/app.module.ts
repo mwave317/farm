@@ -15,6 +15,7 @@ import { CustomerReviewsComponent } from './customer-reviews/customer-reviews.co
 import { ForSaleComponent } from './for-sale/for-sale.component';
 import { CardComponent } from './card/card.component';
 import { TipsAndTerminologyComponent } from './tips-and-terminology/tips-and-terminology.component';
+import { CalendarComponent } from './calendar/calendar.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { TipsAndTerminologyComponent } from './tips-and-terminology/tips-and-ter
     CustomerReviewsComponent,
     ForSaleComponent,
     CardComponent,
-    TipsAndTerminologyComponent
+    TipsAndTerminologyComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,

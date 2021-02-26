@@ -13,7 +13,6 @@ export class CardComponent implements OnInit {
   }
 
   imageUrl = "";
-
   posts = [
     { imageUrl: '../../assets/products/pieces_of_meat.jpg' },
     { imageUrl: '../../assets/products/pieces_of_meat.jpg' },
