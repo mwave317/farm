@@ -7,13 +7,12 @@
              <tr><th class="daysOfTheWeek">S</th><th class="daysOfTheWeek">M</th><th class="daysOfTheWeek">T</th><th class="daysOfTheWeek">W</th><th class="daysOfTheWeek">TH</th><th class="daysOfTheWeek">F</th><th class="daysOfTheWeek">S</th></tr>
          </thead>
          <tbody>
-           
-             {{firstDay}}
+           <tr><td *ngFor="let day of numberOfDays; let i = index">{{day}}</td></tr>
          </tbody>
      </table>
     </div>
-
 </div>
 </div>
+{{firstDayOfThePreviousMonth}}
 {{firstOfTheCurrentMonth}}
 {{firstOfNextMonth}}
