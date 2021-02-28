@@ -16,9 +16,10 @@ export class CalendarComponent implements OnInit {
   firstDay = (new Date(this.year, this.month)).getDay();
   firstDayOfThePreviousMonth: Date;
   firstOfTheCurrentMonth: Date;
-  daysInTheCurrentMonth: number = 28;
+  daysInTheCurrentMonth: number;
   firstOfNextMonth: Date;
   numberOfDays: number[] = [];
+  lastDayOfThePreviousMonth: number;
  
   constructor() { }
 
@@ -26,8 +27,10 @@ export class CalendarComponent implements OnInit {
     this.displayMonth();
     this.getTheFirstOfThePreviousMonth();
     this.getTheFirstOfTheCurrentMonth();
-    this.startTheCurrentMonthOnTheCorrectDay();
     this.getTheFirstOfNextMonth();
+    this.dateLastMonth();
+    this.daysOfTheCurrentMonth();
+    this.startTheCurrentMonthOnTheCorrectDay();
     
   }
 
@@ -52,6 +55,19 @@ export class CalendarComponent implements OnInit {
     firstOfNextMonth.setMonth(firstOfNextMonth.getMonth()+1, 1);
     return this.firstOfNextMonth = firstOfNextMonth;
   }
+
+  daysOfTheCurrentMonth() {
+    const date = new Date();
+    console.log(this.daysInTheCurrentMonth);
+    return this.daysInTheCurrentMonth =  date.getDate()+1;
+}
+
+  dateLastMonth() {
+    const date = new Date();
+    date.setDate(0);
+    let test =  date.getDate().toString();
+    console.log(test);
+}
 
   startTheCurrentMonthOnTheCorrectDay() {
     let splitCurrentMonth = this.firstOfTheCurrentMonth.toString().split(' ');
