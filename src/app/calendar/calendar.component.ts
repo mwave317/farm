@@ -1,5 +1,6 @@
 import { getLocaleMonthNames } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 
 @Component({
   selector: 'app-calendar',
@@ -9,16 +10,23 @@ import { Component, OnInit } from '@angular/core';
 export class CalendarComponent implements OnInit {
   date = new Date();
   month = this.date.getMonth();
+  nextMonth = this.month + 1;
+  previousMonth = this.month -1;
   fullMonth: string[] = ['January', 'February', 'March', 'April', 'May', 'June', 'July ', 'August', 'September', 'October', 'November', 'December'];
   fullDaysOfTheWeek: string[] = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  displayedPreviousMonth: string = '';
   displayedMonth: string = '';
+  displayedNextMonth: string = '';
+  
   year = this.date.getFullYear();
   firstDay = (new Date(this.year, this.month)).getDay();
   firstDayOfThePreviousMonth: Date;
   firstOfTheCurrentMonth: Date;
+  daysInThePreviousMonth: number;
   daysInTheCurrentMonth: number;
+  daysInTheNextMonth: number;
   firstOfNextMonth: Date;
-  numberOfDays: number[] = [];
+  daysDisplayedOnTheCalendar: number[] = [];
   lastDayOfThePreviousMonth: number;
  
   constructor() { }
@@ -30,43 +38,79 @@ export class CalendarComponent implements OnInit {
     this.getTheFirstOfNextMonth();
     this.dateLastMonth();
     this.daysOfTheCurrentMonth();
+    this.daysOfTheNextMonth();
     this.startTheCurrentMonthOnTheCorrectDay();
+    this.displayPreviousMonth();
+    this.displayNextMonth();
+    console.log('This is the previous month', this.previousMonth);
+    console.log('This is the current month', this.month);
+    console.log('This is the next month', this.nextMonth);
+    console.log('This is the written previous month', this.displayedPreviousMonth);
+    console.log('This is the written month', this.displayedMonth)
+    console.log('This is the written next month', this.displayedNextMonth)
+   
     
   }
+
+  displayPreviousMonth () {
+    return this.displayedPreviousMonth =  this.fullMonth[this.month -1];
+   }
 
   displayMonth () {
    return this.displayedMonth =  this.fullMonth[this.month];
   }
 
+  displayNextMonth () {
+    return this.displayedNextMonth =  this.fullMonth[this.month + 1];
+   }
+
   getTheFirstOfThePreviousMonth() {
     let firstDayOfThePreviousMonth = new Date();
     firstDayOfThePreviousMonth.setMonth(firstDayOfThePreviousMonth.getMonth()-1, 1);
+    this.firstDayOfThePreviousMonth = firstDayOfThePreviousMonth;
+    console.log('This is the first day of the previous month', this.firstDayOfThePreviousMonth);
     return this.firstDayOfThePreviousMonth = firstDayOfThePreviousMonth;
   }
 
   getTheFirstOfTheCurrentMonth() {
     let firstOfTheCurrentMonth = new Date();
     firstOfTheCurrentMonth.setMonth(firstOfTheCurrentMonth.getMonth(), 1);
-    return this.firstOfTheCurrentMonth = firstOfTheCurrentMonth;
+    this.firstOfTheCurrentMonth = firstOfTheCurrentMonth;
+    console.log('This is the first of the current month', this.firstOfTheCurrentMonth)
+    return this.firstOfTheCurrentMonth;
   }
 
   getTheFirstOfNextMonth() {
     let firstOfNextMonth = new Date();
     firstOfNextMonth.setMonth(firstOfNextMonth.getMonth()+1, 1);
+    this.firstOfNextMonth = firstOfNextMonth;
+    console.log('This is the first day of the next month', this.firstOfNextMonth);
     return this.firstOfNextMonth = firstOfNextMonth;
   }
 
   daysOfTheCurrentMonth() {
     const date = new Date();
-    console.log(this.daysInTheCurrentMonth);
-    return this.daysInTheCurrentMonth =  date.getDate()+1;
+    let lastOfTheCurrentMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+    console.log(lastOfTheCurrentMonth);
+    let splitlastOfTheCurrentMonth = lastOfTheCurrentMonth.toString().split(' ');
+    this.daysInTheCurrentMonth = parseInt(splitlastOfTheCurrentMonth[2]);
+    console.log(splitlastOfTheCurrentMonth);
+}
+
+daysOfTheNextMonth() {
+  const date = new Date();
+  let lastOfTheNextMonth = new Date(date.getFullYear(), date.getMonth() + 2, 0);
+  console.log(lastOfTheNextMonth);
+  let splitlastOfTheNextMonth = lastOfTheNextMonth.toString().split(' ');
+  this.daysInTheNextMonth = parseInt(splitlastOfTheNextMonth[2]);
+  console.log('These are the days in the next month', this.daysInTheNextMonth);
 }
 
   dateLastMonth() {
     const date = new Date();
     date.setDate(0);
-    let test =  date.getDate().toString();
-    console.log(test);
+    this.daysInThePreviousMonth =  date.getDate();
+    console.log('These are the days in the pevious month', this.daysInThePreviousMonth);
 }
 
   startTheCurrentMonthOnTheCorrectDay() {
@@ -77,9 +121,9 @@ export class CalendarComponent implements OnInit {
 
     if(this.daysInTheCurrentMonth) {
       for (let i = 1; i<= this.daysInTheCurrentMonth; i++){ 
-        this.numberOfDays.push(i);
+        this.daysDisplayedOnTheCalendar.push(i);
       }
-      console.log(this.numberOfDays);
+      console.log('These are the days being displayed on the calendar ', this.daysDisplayedOnTheCalendar);
     }
 
     console.log(splitCurrentMonth);
