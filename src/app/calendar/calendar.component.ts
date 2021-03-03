@@ -25,6 +25,7 @@ export class CalendarComponent implements OnInit {
   daysInThePreviousMonth: number;
   daysInTheCurrentMonth: number;
   daysInTheNextMonth: number;
+  lastDayInTheCurrentMonth: string;
   firstOfNextMonth: Date;
   listedDaysInThePreviousMonth: number[] = [];
   daysDisplayedOnTheCalendar: number[] = [];
@@ -32,6 +33,7 @@ export class CalendarComponent implements OnInit {
   lastDayOfThePreviousMonth: number;
   previousDaysNeeded = 0;
   displayedDaysOfThePreviousMonth;
+  addedDaysForNextMonth;
 
   constructor() { }
 
@@ -98,7 +100,9 @@ export class CalendarComponent implements OnInit {
     console.log(lastOfTheCurrentMonth);
     let splitlastOfTheCurrentMonth = lastOfTheCurrentMonth.toString().split(' ');
     this.daysInTheCurrentMonth = parseInt(splitlastOfTheCurrentMonth[2]);
+    this.lastDayInTheCurrentMonth = splitlastOfTheCurrentMonth[0];
     console.log(splitlastOfTheCurrentMonth);
+    console.log(this.lastDayInTheCurrentMonth);
   }
 
   daysOfTheNextMonth() {
@@ -162,11 +166,33 @@ export class CalendarComponent implements OnInit {
       for (let i = 1; i <= this.daysInTheCurrentMonth; i++) {
         this.daysDisplayedOnTheCalendar.push(i);
       }
-      
+      console.log(this.daysInTheCurrentMonth);
       console.log('These are the days being displayed on the calendar ', this.daysDisplayedOnTheCalendar);
     }
+    if (this.lastDayInTheCurrentMonth === 'Sun') {
+      this.addedDaysForNextMonth = 6;
+    }
 
+    if (this.lastDayInTheCurrentMonth === 'Mon') {
+      this.addedDaysForNextMonth = 5;
+    }
 
+    if (this.lastDayInTheCurrentMonth === 'Tue') {
+      this.addedDaysForNextMonth = 4;
+    }
 
+    if (this.lastDayInTheCurrentMonth === 'Wed') {
+      this.addedDaysForNextMonth = 3;
+    }
+    if (this.lastDayInTheCurrentMonth === 'Thu') {
+      this.addedDaysForNextMonth = 2;
+    }
+    if (this.lastDayInTheCurrentMonth === 'Fri') {
+      this.addedDaysForNextMonth = 1;
+    }
+
+    for (let i =  1; i <= this.addedDaysForNextMonth; i++) {
+      this.daysDisplayedOnTheCalendar.push(i);
+    }
   }
 }
